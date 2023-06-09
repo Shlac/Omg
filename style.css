@@ -1,0 +1,69 @@
+body {
+    font-family: Verdana;
+    font-family: 'PT Sans';
+    margin-top: 10px;
+}
+a {
+    text-decoration-color: black;
+    color: black;
+} 
+
+#space {
+            display: block;
+            content: "";
+            margin-bottom: 50px;
+            }
+
+
+
+
+
+
+
+/* Media queries para dispositivos de pantalla pequeña */
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    a {
+        font-size: 27px;
+    }
+
+    footer {
+        font-size: 30px;
+    }
+}
+
+            
+
+/*responsive
+/* Media queries para dispositivos de pantalla mediana */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    a {
+        font-size: 39px;
+    }
+
+    footer {
+        font-size: 25px;
+    }
+}
+
+/* Media queries para dispositivos de pantalla grande */
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 58px;
+    }
+
+    a {
+        font-size: 52px;
+    }
+
+    footer {
+        font-size: 48px;
+    }
+}
