@@ -2,7 +2,7 @@ body {
     font-family: Verdana;
     font-family: 'PT Sans';
     margin-top: 0px;
-    background: snow;
+    background: white;
     margin: 0;
     padding: 0;
 }
@@ -62,6 +62,24 @@ a {
 display: block;
 content: "";
     margin-top: 15px;
+}
+#texto-cambiante {
+  display: inline-block;
+  opacity: 0;
+  animation: escribir 2s 1s forwards;
+}
+
+#titulo {
+    position: relative;
+}
+
+@keyframes escribir {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes y{
