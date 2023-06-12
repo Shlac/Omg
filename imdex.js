@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const textoCambiante = document.getElementById('texto-cambiante');
-  const palabras = ["gratis", "divertidas", "entretenidas", "pro"];
+  const palabras = ["gratis", "divertidas", "entretenidas", "pro", "fachas", "aventureras", "interesantes"];
   let indicePalabra = 0;
   let indiceLetra = 0;
   let primeraLetraMostrada = false;
