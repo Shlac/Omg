@@ -4,11 +4,28 @@ body {
     margin-top: 0px;
     margin: 0;
     padding: 0;
-    background-color: #E0FFDF;
-    color: #012B3B;
+    background-color: #012B3B;
+    color: #E0FFDF;
 }
 
+.search-container {
+      position: relative;
+      display: inline-block;
+      margin-left: 16px;
+    }
 
+.clear-button {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      display: none;
+    background: white;
+    color: #002A3C;
+    border: white;
+    font-family: 'Noto Serif', serif;
+    }
 
 #web {
     margin-left:10px;
@@ -16,8 +33,8 @@ body {
   padding: 0;
 }
 a {
-    text-decoration-color: #002A3C;
-    color: #002A3C;
+    text-decoration-color: #E0FFDF;
+    color: #E0FFDF;
 } 
 
 #space {
@@ -28,6 +45,7 @@ a {
 .title {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Serif', serif;
 }
 
 .title-box {
@@ -75,6 +93,21 @@ content: "";
 
 #titulo {
     position: relative;
+}
+
+#busqueda, #buscarBtn {
+    background: white;
+    color: #002A3C;
+    border: 3px solid white;
+    border-radius: 3px;
+    outline: none;
+    font-family: 'Noto Serif', serif;
+   
+}
+
+::placeholder {
+    color: #002A3C;
+    font-family: 'Noto Serif', serif;
 }
 
 
@@ -149,3 +182,4 @@ content: "";
         font-size: 44px;
     }
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
