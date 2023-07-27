@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Aplicación de Películas</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // Código JavaScript de App.js
+    import React, { useState } from 'react';
+
+    const App = () => {
+      const [movies, setMovies] = useState([
+        { id: 10001, title: 'Aventuras en el Espacio', overview: 'Una emocionante aventura espacial en busca de nuevos planetas habitables.', poster_path: '/ruta/imagen-aventuras-espacio.jpg', videoLink: 'https://www.example.com/pelicula-aventuras-espacio' },
+        // Agregar más películas aquí...
+      ]);
+
+      const [selectedMovie, setSelectedMovie] = useState(null);
+
+      const handleMovieClick = (movie) => {
+        setSelectedMovie(movie);
+      };
+
+      const handleBackButton = () => {
+        setSelectedMovie(null);
+      };
+
+      return (
+        <div>
+          <h1>Películas</h1>
+          {!selectedMovie ? (
+            <div className="grid-container">
+              {movies.map((movie) => (
+                <div key={movie.id} className="grid-item" onClick={() => handleMovieClick(movie)}>
+                  <img src={movie.poster_path} alt={movie.title} />
+                  <h2>{movie.title}</h2>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="movie-details">
+              <button onClick={handleBackButton}>Retroceso</button>
+              <h2>{selectedMovie.title}</h2>
+              <img src={selectedMovie.poster_path} alt={selectedMovie.title} />
+              <p>{selectedMovie.overview}</p>
+              <iframe
+                title={selectedMovie.title}
+                width="560"
+                height="315"
+                src={selectedMovie.videoLink}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // Renderiza la aplicación en el elemento con el id "root"
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+  </html>
+  
