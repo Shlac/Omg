@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react';
-
-const API_KEY = 'TU_CLAVE_DE_API_TMDB'; // Obtén tu clave de API de The Movie Database
+import React, { useState } from 'react';
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([
+    {
+      id: 10001,
+      title: 'Aventuras en el Espacio',
+      overview: 'Una emocionante aventura espacial en busca de nuevos planetas habitables.',
+      poster_path: '/ruta/imagen-aventuras-espacio.jpg', // Reemplaza con la URL de una imagen ficticia
+      videoLink: 'https://www.example.com/pelicula-aventuras-espacio', // Reemplaza con el enlace del video de la película
+    },
+    // Agregar más películas aquí...
+  ]);
+
   const [selectedMovie, setSelectedMovie] = useState(null);
-
-  useEffect(() => {
-    // Cargar las películas desde la base de datos (API de TMDb) al cargar la página
-    fetchMovies();
-  }, []);
-
-  const fetchMovies = async () => {
-    try {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
-      );
-      const data = await response.json();
-      setMovies(data.results);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   // Función para mostrar los detalles de una película
   const handleMovieClick = (movie) => {
@@ -40,7 +31,7 @@ const App = () => {
         <div className="grid-container">
           {movies.map((movie) => (
             <div key={movie.id} className="grid-item" onClick={() => handleMovieClick(movie)}>
-              <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+              <img src={movie.poster_path} alt={movie.title} />
               <h2>{movie.title}</h2>
             </div>
           ))}
@@ -49,7 +40,7 @@ const App = () => {
         <div className="movie-details">
           <button onClick={handleBackButton}>Retroceso</button>
           <h2>{selectedMovie.title}</h2>
-          <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt={selectedMovie.title} />
+          <img src={selectedMovie.poster_path} alt={selectedMovie.title} />
           <p>{selectedMovie.overview}</p>
           <iframe
             title={selectedMovie.title}
@@ -66,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-    
